@@ -7,7 +7,7 @@ import java.util.Random;
  */
 public class Task2_1 {
     /**
-     * This method imitates 100 coin throws and
+     * This method imitates 1000 coin throws and
      * counts how many times will fall out whether heads or trails.
      * Then prints the result.
      * @author      Steven Altamirano
