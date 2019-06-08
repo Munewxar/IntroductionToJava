@@ -17,11 +17,11 @@ public class PassengerCarriage extends Carriage {
         this.passengersList = passengersList;
     }
 
-    public int getNumberOfPassengers() {
+    public int getAmountOfPassengers() {
         return passengersList.size();
     }
 
-    public int getNumberOfPassengersWithLuggage() {
+    public int getAmountOfPassengersWithLuggage() {
         int amount = 0;
 
         for (int i = 0; i < passengersList.size(); i++) {
