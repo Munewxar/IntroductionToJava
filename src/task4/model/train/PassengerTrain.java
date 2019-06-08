@@ -17,6 +17,26 @@ public class PassengerTrain extends Train {
         this.carriagesList = carriagesList;
     }
 
+    public int getAmountOfPassengers() {
+        int amount = 0;
+
+        for (int i = 0; i < carriagesList.size(); i++) {
+            amount += carriagesList.get(i).getAmountOfPassengers();
+        }
+
+        return amount;
+    }
+
+    public int getAmountOfLuggage() {
+        int amount = 0;
+
+        for (int i = 0; i < carriagesList.size(); i++) {
+            amount += carriagesList.get(i).getAmountOfPassengersWithLuggage();
+        }
+
+        return amount;
+    }
+
     public List<PassengerCarriage> getCarriagesList() {
         return carriagesList;
     }
