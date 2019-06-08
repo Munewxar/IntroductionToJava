@@ -1,18 +1,23 @@
 package task4.model.train;
 
-import task4.model.passenger.Person;
+import task4.model.carriage.PassengerCarriage;
+import java.util.List;
 
+/**
+ * This class describes passenger train.
+ *
+ * @author      Steven Altamirano
+ */
 public class PassengerTrain extends Train {
-    // This means at which side locomotive is located
-    private LocoSide locoSide;
+    private List<PassengerCarriage> carriagesList;
 
-    public enum LocoSide{
-        LEFT,
-        RIGHT
+    public PassengerTrain(String id, List<Locomotive> locomotiveList,
+                          List<PassengerCarriage> carriagesList) {
+        super(id, locomotiveList);
+        this.carriagesList = carriagesList;
     }
 
-    public PassengerTrain(Person driver, LocoSide locoSide) {
-        super(driver);
-        this.locoSide = locoSide;
+    public List<PassengerCarriage> getCarriagesList() {
+        return carriagesList;
     }
 }

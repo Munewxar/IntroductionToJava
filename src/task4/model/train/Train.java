@@ -1,9 +1,5 @@
 package task4.model.train;
 
-import task4.model.carriage.Carriage;
-import task4.model.passenger.Person;
-
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,18 +8,23 @@ import java.util.List;
  * @author      Steven Altamirano
  */
 public class Train {
-    private List<Carriage> carriageList = new ArrayList<>();
-    private Person driver;
+    private String id;
+    private List<Locomotive> locomotiveList;
 
-    public Train(Person driver) {
-        this.driver = driver;
+    public Train(String id, List<Locomotive> locomotiveList) {
+        this.id = id;
+        this.locomotiveList = locomotiveList;
     }
 
-    public List<Carriage> getCarriageList() {
-        return carriageList;
+    public String getId() {
+        return id;
     }
 
-    public Person getDriver() {
-        return driver;
+    public List<Locomotive> getLocomotiveList() {
+        return locomotiveList;
+    }
+
+    public String toString() {
+        return ("Train " + id);
     }
 }
