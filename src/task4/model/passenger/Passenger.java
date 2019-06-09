@@ -16,6 +16,13 @@ public class Passenger {
         this.luggage = luggage;
     }
 
+    public Passenger(String paramString) {
+        String[] params = paramString.split(" ");
+        name = params[0];
+        age = Integer.valueOf(params[1]);
+        luggage = params[2].equals("есть");
+    }
+
     public String getName() {
         return name;
     }

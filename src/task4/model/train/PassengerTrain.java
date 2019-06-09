@@ -11,9 +11,8 @@ import java.util.List;
 public class PassengerTrain extends Train {
     private List<PassengerCarriage> carriagesList;
 
-    public PassengerTrain(String id, List<Locomotive> locomotiveList,
-                          List<PassengerCarriage> carriagesList) {
-        super(id, locomotiveList);
+    public PassengerTrain(String id, List<PassengerCarriage> carriagesList) {
+        super(id);
         this.carriagesList = carriagesList;
     }
 
@@ -39,5 +38,24 @@ public class PassengerTrain extends Train {
 
     public List<PassengerCarriage> getCarriagesList() {
         return carriagesList;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(super.getId());
+        stringBuilder.append("\n");
+        for (int i = 0; i < carriagesList.size(); i++) {
+            stringBuilder.append(carriagesList.get(i).getId());
+            stringBuilder.append("\n");
+
+            for (int j = 0; j < carriagesList.get(i).getPassengersList().size(); j++) {
+                stringBuilder.append(carriagesList.get(i).getPassengersList().get(j).getName());
+                stringBuilder.append("\t");
+            }
+
+            stringBuilder.append("\n");
+        }
+        return stringBuilder.toString();
     }
 }

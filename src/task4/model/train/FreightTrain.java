@@ -12,9 +12,9 @@ import java.util.List;
 public class FreightTrain extends Train{
     private List<FreightCarriage> carriageList;
 
-    public FreightTrain(String id, List<Locomotive> locomotiveList,
+    public FreightTrain(String id,
                         List<FreightCarriage> carriageList) {
-        super(id, locomotiveList);
+        super(id);
         this.carriageList = carriageList;
     }
 

@@ -12,7 +12,7 @@ import java.util.List;
 public class PassengerCarriage extends Carriage {
     private List<Passenger> passengersList;
 
-    public PassengerCarriage(List<Passenger> passengersList, int id) {
+    public PassengerCarriage(int id, List<Passenger> passengersList) {
         super(id);
         this.passengersList = passengersList;
     }

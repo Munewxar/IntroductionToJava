@@ -9,7 +9,6 @@ import java.util.List;
  */
 public class Carriage {
     private int id;
-    private List<Carriage> listOfCarriages;
 
     public Carriage(int id) {
         this.id = id;
@@ -17,14 +16,6 @@ public class Carriage {
 
     public int getId() {
         return id;
-    }
-
-    public void setListOfCarriages(List<Carriage> listOfCarriages) {
-        this.listOfCarriages = listOfCarriages;
-    }
-
-    public List<Carriage> getListOfCarriages() {
-        return listOfCarriages;
     }
 
     public String toString() {
