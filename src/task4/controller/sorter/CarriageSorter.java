@@ -13,22 +13,29 @@ import java.util.TreeSet;
  *
  * @author      Steven Altamirano
  */
-public class PassengerCarriageSorter {
+public class CarriageSorter {
 
     /**
      * This method creates TreeSet.
      * It means that all carriages will be sorted.
      * Then removes all data from current train's carriages list.
      * Then add all data from TreeSet to current train's carriage list.
+     *
+     * It's problem here: if we have two equal objects (means they're have equal amount of
+     * passengers and equal amount of passengers with luggage), method addAll
+     * @see TreeSet
+     * ignores one of these elements (element, which goes second).
+     *
      * @param passengerTrain - train in which we will sort carriages
      */
     public static void sort(PassengerTrain passengerTrain) {
-        Comparator<PassengerCarriage> pcomp = new PassengersAmountComparator().
+        Comparator<PassengerCarriage> comparator = new PassengersAmountComparator().
                                               thenComparing(new LuggageAmountComparator());
-        TreeSet<PassengerCarriage> passengerCarriageTreeSet = new TreeSet(pcomp);
+        TreeSet<PassengerCarriage> passengerCarriageTreeSet = new TreeSet(comparator);
 
         passengerCarriageTreeSet.addAll(passengerTrain.getCarriagesList());
         passengerTrain.getCarriagesList().clear();
+
         passengerTrain.getCarriagesList().addAll(passengerCarriageTreeSet);
     }
 }
