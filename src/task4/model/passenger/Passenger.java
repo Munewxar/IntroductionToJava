@@ -19,7 +19,11 @@ public class Passenger {
     public Passenger(String paramString) {
         String[] params = paramString.split(" ");
         name = params[0];
-        age = Integer.valueOf(params[1]);
+        try {
+            age = Integer.valueOf(params[1]);
+        } catch (NumberFormatException e) {
+            System.err.println(e);
+        }
         luggage = params[2].equals("есть");
     }
 
