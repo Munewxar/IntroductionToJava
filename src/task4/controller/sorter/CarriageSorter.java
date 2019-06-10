@@ -1,5 +1,6 @@
 package task4.controller.sorter;
 
+import task4.controller.comparators.CarriageIdComparator;
 import task4.controller.comparators.LuggageAmountComparator;
 import task4.controller.comparators.PassengersAmountComparator;
 import task4.model.carriage.PassengerCarriage;
@@ -26,11 +27,15 @@ public class CarriageSorter {
      * @see TreeSet
      * ignores one of these elements (element, which goes second).
      *
+     * This bug was fixed (third comparator added).
+     * @see CarriageIdComparator
+     *
      * @param passengerTrain - train in which we will sort carriages
      */
     public static void sort(PassengerTrain passengerTrain) {
         Comparator<PassengerCarriage> comparator = new PassengersAmountComparator().
-                                              thenComparing(new LuggageAmountComparator());
+                                              thenComparing(new LuggageAmountComparator().
+                                                      thenComparing(new CarriageIdComparator()));
         TreeSet<PassengerCarriage> passengerCarriageTreeSet = new TreeSet(comparator);
 
         passengerCarriageTreeSet.addAll(passengerTrain.getCarriagesList());
